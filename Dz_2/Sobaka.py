@@ -4,7 +4,6 @@ class Sobaka:
         self.name=name
         self.poroda=poroda
         self.health=100
-        self.graz=0
         self.money=100
         self.happy=100
         self.sitost=100
@@ -51,3 +50,27 @@ class Sobaka:
             self.ukus()
         if walk_cube==4 and self.poroda != "Chihuahua":
             self.play()
+    def alive(self):
+        if self.happy<1:
+            self.live=0
+            print("Depression...")
+            return
+        if self.health<1:
+            self.live=0
+            print("Virus...")
+            return
+        if self.money < 1:
+            self.live = 0
+            print("Not money...")
+            return
+        if self.sitost<1:
+            self.live=0
+            print("Dog is Hunger...")
+            return
+    def live(self):
+        live_
+        self.
+        print(f"Здоровье собаки: {self.heath}")
+        print(f"Деньги: {self.money}")
+        print(f"Счастье собаки: {self.happy}")
+        print(f"Сытость собаки: {self.sitost}")
