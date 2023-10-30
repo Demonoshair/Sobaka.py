@@ -1,8 +1,8 @@
 import random
 class Sobaka:
-    def __init__(self, name="Sharik", poroda=None):
+    def __init__(self, name="Sharik", porod=None):
         self.name=name
-        self.poroda=poroda
+        self.porod=porod
         self.health=100
         self.money=100
         self.happy=100
@@ -23,13 +23,13 @@ class Sobaka:
     def poroda(self):
         poroda_cube=(random.randint(1,3))
         if poroda_cube==1:
-            self.poroda="Chihuahua"
+            self.porod="Chihuahua"
             print("Ваша порода собаки: Чихуахуа")
         if poroda_cube==2:
-            self.poroda="Buldog"
+            self.porod="Buldog"
             print("Ваша порода собаки: Бульдог")
         if poroda_cube==3:
-            self.poroda="Korgi"
+            self.porod="Korgi"
             print("Ваша порода собаки: Корги")
     def sleep(self):
         print("Собакин поспал")
@@ -47,9 +47,9 @@ class Sobaka:
             self.luza()
         if walk_cube==3:
             self.ukus()
-        if walk_cube==4 and self.poroda=="Chihuahua":
+        if walk_cube==4 and self.porod=="Chihuahua":
             self.ukus()
-        if walk_cube==4 and self.poroda != "Chihuahua":
+        if walk_cube==4 and self.porod != "Chihuahua":
             self.play()
     def alive(self):
         if self.happy<1:
@@ -69,6 +69,8 @@ class Sobaka:
             print("Dog is Hunger...")
             return
     def life(self,day):
+        if self.porod==None:
+            self.poroda()
         day = "day " + str(day) + " of " + self.name + " life"
         print(f"{day:=^50}")
         self.alive()
@@ -79,6 +81,11 @@ class Sobaka:
             self.walk()
         if self.live_cube==3:
             self.eat()
+
+        if self.happy>100:
+            self.happy=100
+        if self.sitost>100:
+            self.happy=100
         print(f"Здоровье собаки: {self.health}")
         print(f"Деньги: {self.money}")
         print(f"Счастье собаки: {self.happy}")
