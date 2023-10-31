@@ -95,7 +95,9 @@ class Sobaka:
         print(f"Счастье собаки: {self.happy}")
         print(f"Сытость собаки: {self.sitost}")
         self.alive()
+
 dogus=Sobaka()
+
 for day in range (1,22):
     if dogus.live==False:
         break
