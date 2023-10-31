@@ -103,3 +103,4 @@ for day in range (1,22):
         break
     else:
         dogus.life(day)
+input()
