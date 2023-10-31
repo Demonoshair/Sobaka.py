@@ -4,22 +4,22 @@ class Sobaka:
         self.name=name
         self.porod=porod
         self.health=100
-        self.money=100
+        self.money=200
         self.happy=100
         self.sitost=100
         self.live=True
     def play(self):
         print("Собакин поиграл")
-        self.sitost-=20
-        self.happy+=40
+        self.sitost-=30
+        self.happy+=20
     def luza(self):
         print("Собакин повалялся в луже")
-        self.health-=20
+        self.health-=30
         self.happy+=40
     def ukus(self):
         print("Собакин покусал прохожего. У вас потребовали выплатить компенсацию")
         self.money-=20
-        self.happy+=40
+        self.happy-=40
     def poroda(self):
         poroda_cube=(random.randint(1,3))
         if poroda_cube==1:
@@ -34,10 +34,10 @@ class Sobaka:
     def sleep(self):
         print("Собакин поспал")
         self.happy+=10
-        self.sitost-=30
+        self.health+=20
     def eat(self):
         print("Собакин покушал")
-        self.sitost+=30
+        self.sitost+=60
         self.money-=15
     def walk(self):
         walk_cube=(random.randint(1,4))
@@ -85,13 +85,16 @@ class Sobaka:
         if self.happy>100:
             self.happy=100
         if self.sitost>100:
-            self.happy=100
+            self.sitost=100
+        if self.health>100:
+            self.health=100
         print(f"Здоровье собаки: {self.health}")
         print(f"Деньги: {self.money}")
         print(f"Счастье собаки: {self.happy}")
         print(f"Сытость собаки: {self.sitost}")
 dogus=Sobaka()
-for day in range (1,8):
+for day in range (1,22):
     if dogus.live==False:
         break
-    dogus.life(day)
+    else:
+        dogus.life(day)
