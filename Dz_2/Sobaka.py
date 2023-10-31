@@ -69,11 +69,13 @@ class Sobaka:
             print("Dog is Hunger...")
             return
     def life(self,day):
+        if self.live==False:
+            self.alive()
+            return
         if self.porod==None:
             self.poroda()
         day = "day " + str(day) + " of " + self.name + " life"
         print(f"{day:=^50}")
-        self.alive()
         self.live_cube=random.randint(1,3)
         if self.live_cube==1:
             self.sleep()
@@ -92,6 +94,7 @@ class Sobaka:
         print(f"Деньги: {self.money}")
         print(f"Счастье собаки: {self.happy}")
         print(f"Сытость собаки: {self.sitost}")
+        self.alive()
 dogus=Sobaka()
 for day in range (1,22):
     if dogus.live==False:
