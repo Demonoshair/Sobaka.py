@@ -144,6 +144,18 @@ class Child:
             self.alive=False
             print("Golod...")
 
+class Uchitel:
+    def __init__(self, zlost=0, monep):
+        self.zlost=zlost
+        self.monep=monep
+    def live(self):
+        self.zlost+=random(1,3)
+        if self.zlost>10:
+            print("Учитель заставляет сдать на новые шторы")
+            self.shtori()
+    def shtori(self):
+        self.zlost=0
+        if self.monep
 #Обьект класса Ребёнок
 mihail=Child(name="Mihail")
 for day in range(1,366):
