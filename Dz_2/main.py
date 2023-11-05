@@ -16,7 +16,6 @@ class Child:
         self.alive=True
         self.text=None
     def shkola(self):
-        self.shkola_cube=random.randint(1,3)
         if self.shkola_cube==1:
             print("Вы решили прогулять школу")
             self.intelekt-=20
@@ -86,6 +85,9 @@ class Child:
         if self.day==30:
             self.day=1
             self.age+=1
+        marya_ivanovna=Uchitel(namep=self)
+        marya_ivanovna.live()
+        self.shkola_cube=random.randint(1,3)
         self.rand_cube=random.randint(1,4)
         if self.rand_cube==1:
             print("Родители ушли на работу")
@@ -145,17 +147,21 @@ class Child:
             print("Golod...")
 
 class Uchitel:
-    def __init__(self, zlost=0, monep):
+    def __init__(self, zlost=0, namep=None):
         self.zlost=zlost
-        self.monep=monep
+        self.namep=namep
     def live(self):
-        self.zlost+=random(1,3)
+        self.zlost+=random.randint(1,3)
+        print(f"zlost uchitela: {self.zlost}")
         if self.zlost>10:
             print("Учитель заставляет сдать на новые шторы")
             self.shtori()
     def shtori(self):
         self.zlost=0
-        if self.monep
+        if self.namep.money>20:
+            self.namep.money-=20
+        else:
+            self.namep.happy-=20
 #Обьект класса Ребёнок
 mihail=Child(name="Mihail")
 for day in range(1,366):
