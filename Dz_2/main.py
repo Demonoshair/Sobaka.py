@@ -151,18 +151,22 @@ class Uchitel:
         self.zlost=zlost
         self.namep=namep
     def live(self):
-        self.zlost+=random.randint(1,3)
+        self.zlost=random.randint(6,12)
         print(f"zlost uchitela: {self.zlost}")
-        if self.zlost>10:
+        if self.zlost>=10:
             print("Учитель заставляет сдать на новые шторы")
             self.shtori()
     def shtori(self):
         self.zlost=0
         if self.namep.money>20:
             self.namep.money-=20
+            print("Вы сдали деньги на шторы")
         else:
             self.namep.happy-=20
+            print("Вас наругал учитель что вы не сдали деньги на шторы")
+
 #Обьект класса Ребёнок
+
 mihail=Child(name="Mihail")
 for day in range(1,366):
     if mihail.alive==False:
