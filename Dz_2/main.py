@@ -39,7 +39,7 @@ class Child:
         if self.park_cube==1:
             print("Вы пошли на атракционы")
             self.money-=20
-            self.happy+=30
+            self.happy+=50
             self.stamina-=20
             self.reputation += 0.2
         if self.park_cube==2:
@@ -54,14 +54,13 @@ class Child:
                 self.money-=30
             else:
                 print("Вам было очень весело)")
-                self.happy+=20
-                self.food-=10
+                self.happy+=40
                 self.stamina-=20
                 self.reputation += 0.2
         if self.park_cube==3:
             print("Вы упали в лужу, у расплакались")
             self.health-=10
-            self.happy-=20
+            self.happy-=10
         if self.park_cube==4:
             print("Вы на асфальте нашли 20 гривень")
             self.grn_cube=random.randint(1,3)
@@ -89,9 +88,11 @@ class Child:
         marya_ivanovna.live()
         self.shkola_cube=random.randint(1,3)
         self.rand_cube=random.randint(1,4)
+        if self.money<=20 and self.happy>20:
+            self.rand_cube=1
         if self.rand_cube==1:
             print("Родители ушли на работу")
-            self.happy-=20
+            self.happy-=10
             self.money+=60
         elif self.rand_cube==2:
             print("Вы решили пойти в парк")
@@ -105,7 +106,7 @@ class Child:
         if self.health<30 and self.money>30:
             self.money-=30
             self.health=70
-        if self.money>10:
+        if self.money>=10:
             self.money-=10
             self.food=True
         else:
@@ -168,7 +169,7 @@ class Uchitel:
 #Обьект класса Ребёнок
 
 mihail=Child(name="Mihail")
-for day in range(1,366):
+while (mihail.age<3):
     if mihail.alive==False:
         break
     mihail.life()
