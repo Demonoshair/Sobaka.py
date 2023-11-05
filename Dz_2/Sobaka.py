@@ -21,14 +21,14 @@ class Sobaka:
         self.money-=20
         self.happy-=40
     def poroda(self):
-        poroda_cube=(random.randint(1,3))
-        if poroda_cube==1:
+        self.poroda_cube=(random.randint(1,3))
+        if self.poroda_cube==1:
             self.porod="Chihuahua"
             print("Ваша порода собаки: Чихуахуа")
-        if poroda_cube==2:
+        if self.poroda_cube==2:
             self.porod="Buldog"
             print("Ваша порода собаки: Бульдог")
-        if poroda_cube==3:
+        if self.poroda_cube==3:
             self.porod="Korgi"
             print("Ваша порода собаки: Корги")
     def sleep(self):
@@ -40,16 +40,16 @@ class Sobaka:
         self.sitost+=60
         self.money-=15
     def walk(self):
-        walk_cube=(random.randint(1,4))
-        if walk_cube==1:
+        self.walk_cube=(random.randint(1,4))
+        if self.walk_cube==1:
             self.play()
-        if walk_cube==2:
+        if self.walk_cube==2:
             self.luza()
-        if walk_cube==3:
+        if self.walk_cube==3:
             self.ukus()
-        if walk_cube==4 and self.porod=="Chihuahua":
+        if self.walk_cube==4 and self.porod=="Chihuahua":
             self.ukus()
-        if walk_cube==4 and self.porod != "Chihuahua":
+        if self.walk_cube==4 and self.porod != "Chihuahua":
             self.play()
     def alive(self):
         if self.happy<1:
