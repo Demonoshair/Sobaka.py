@@ -181,3 +181,4 @@ while (mihail.age<3):
     if mihail.alive==False:
         break
     mihail.life()
+input()
